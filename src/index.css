@@ -1,0 +1,98 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  color-scheme: light;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  background: #FAF5E8;
+  color: #211C13;
+  font-family: 'Inter', sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+h1, h2, h3, h4 {
+  font-family: 'Cormorant Garamond', serif;
+}
+
+::selection {
+  background: rgba(198, 153, 44, 0.35);
+}
+
+:focus-visible {
+  outline: 3px solid #C6992C;
+  outline-offset: 3px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.001ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.001ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+/* Signature scalloped arch shape, echoing the dome + mihrab motif from the logo */
+.arch-top {
+  border-top-left-radius: 999px 120px;
+  border-top-right-radius: 999px 120px;
+}
+
+.scallop-divider {
+  height: 22px;
+  width: 100%;
+  background-repeat: repeat-x;
+  background-size: 34px 22px;
+  background-position: top center;
+}
+
+.scallop-divider--down {
+  background-image: radial-gradient(circle at 17px -6px, transparent 15px, currentColor 15.5px);
+}
+
+.scallop-divider--up {
+  background-image: radial-gradient(circle at 17px 22px, transparent 15px, currentColor 15.5px);
+}
+
+.eyebrow {
+  font-family: 'Inter', sans-serif;
+  font-weight: 700;
+  font-size: 0.72rem;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+}
+
+.bg-lattice {
+  background-image:
+    radial-gradient(circle at 1px 1px, rgba(198,153,44,0.28) 1.4px, transparent 0);
+  background-size: 26px 26px;
+}
+
+.fade-up {
+  animation: fadeUp 0.7s ease both;
+}
+
+@keyframes fadeUp {
+  from { opacity: 0; transform: translateY(14px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.leaf-flourish::before,
+.leaf-flourish::after {
+  content: "";
+  display: inline-block;
+  width: 34px;
+  height: 10px;
+  background: linear-gradient(90deg, transparent, #2B5B44, transparent);
+  vertical-align: middle;
+  margin: 0 10px;
+}
